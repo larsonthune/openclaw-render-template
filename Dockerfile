@@ -7,7 +7,8 @@ RUN apt-get update \
 
 WORKDIR /app
 COPY package.json ./
-RUN npm install --omit=dev --prefer-online && npm cache clean --force
+RUN npm install --omit=dev --prefer-online && npm cache clean --force \
+    && ln -sf /app/node_modules/.bin/openclaw /usr/local/bin/openclaw
 
 ENV PATH="/app/node_modules/.bin:$PATH"
 ENV ALPHACLAW_ROOT_DIR=/data
