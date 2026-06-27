@@ -17,6 +17,12 @@ services:
         sync: false
       - key: TELEGRAM_BOT_TOKEN_ADMIN
         sync: false
+      - key: REDDIT_SESSION
+        sync: false
+      - key: TWITTER_AUTH_TOKEN
+        sync: false
+      - key: TWITTER_CT0
+        sync: false
     disk:
       name: openclaw-data
       mountPath: /data
