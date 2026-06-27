@@ -18,6 +18,7 @@ ENV BUN_INSTALL=/root/.bun
 ENV PATH="/root/.bun/bin:$PATH"
 
 WORKDIR /opt
+ARG GBRAIN_CACHE_BUST=2026-06-27
 RUN git clone --depth 1 https://github.com/garrytan/gbrain.git
 WORKDIR /opt/gbrain
 RUN bun install && bun link
