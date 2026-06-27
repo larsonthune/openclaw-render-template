@@ -36,7 +36,7 @@ RUN claude --version && which claude-agent-acp
 # --- agent-reach: Reddit, Twitter/X, YouTube, web reader ---
 RUN python3 -m venv /opt/agent-reach-venv \
     && /opt/agent-reach-venv/bin/pip install --quiet \
-        agent-reach==1.5.0 \
+        "https://github.com/Panniantong/agent-reach/archive/refs/tags/v1.5.0.zip" \
         rdt-cli \
         twitter-cli \
         browser-cookie3 \
@@ -53,3 +53,4 @@ WORKDIR /app
 EXPOSE 3000
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["node", "/app/node_modules/@chrysb/alphaclaw/bin/alphaclaw.js", "start"]
+
