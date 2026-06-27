@@ -34,4 +34,4 @@ RUN claude --version && which claude-agent-acp
 
 WORKDIR /app
 EXPOSE 3000
-CMD ["alphaclaw", "start"]
+CMD ["node", "/app/node_modules/@chrysb/alphaclaw/bin/alphaclaw.js", "start"]
